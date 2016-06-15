@@ -16,12 +16,12 @@ class MaxIntSet
     @store = Array.new(max, false)
   end
 
-  #############################################################################
+  # ***************************************************************************
   # INSERT
   # First, we check that the number is not larger than the size of the array.
   # Next, we check if the value at that index is already set to true.
   # Then, we set the value at that index to True.
-  #############################################################################
+  # ***************************************************************************
 
   def insert(num)
     validate!(num)
