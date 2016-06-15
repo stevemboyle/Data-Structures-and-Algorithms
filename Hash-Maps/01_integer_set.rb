@@ -1,13 +1,34 @@
 class MaxIntSet
+
+  #############################################################################
+  # INITIALIZE
+  # Here, we create an Array with indices from 0 to the Maximum Value.
+  # All values in the Array are initialized to False.
+  #############################################################################
+
   def initialize(max)
     @store = Array.new(max, false)
   end
+
+  #############################################################################
+  # INSERT
+  # First, we check that the number is not larger than the size of the array.
+  # Next, we check if the value at that index is already set to true.
+  # Then, we set the value at that index to True.
+  #############################################################################
 
   def insert(num)
     validate!(num)
     return false if @store[num]
     @store[num] = true
   end
+
+  #############################################################################
+  # REMOVE
+  # First, we check that the number is not larger than the size of the array.
+  # Next, we check if the value at that index is already False.
+  # Then, we set the value of that index to False.
+  #############################################################################
 
   def remove(num)
     validate!(num)
@@ -16,6 +37,13 @@ class MaxIntSet
     num
   end
 
+  #############################################################################
+  # REMOVE
+  # First, we check that the number is not larger than the size of the array.
+  # Then, we check whether our set includes the number.
+  # We do this by checking whether the value at that index is True or False.
+  #############################################################################
+
   def include?(num)
     validate!(num)
     @store[num]
@@ -23,9 +51,19 @@ class MaxIntSet
 
   private
 
+  #############################################################################
+  # IS VALID?
+  # We check that our number is within the scope of the array.
+  #############################################################################
+
   def is_valid?(num)
     num.between?(0, @store.length - 1)
   end
+
+  #############################################################################
+  # VALIDATE
+  # We raise an error if our number is not within the scope of the array.
+  #############################################################################
 
   def validate!(num)
     raise "Out of bounds" unless is_valid?(num)
