@@ -1,5 +1,11 @@
 require_relative "01_static_array"
 
+###############################################################################
+# *****************************************************************************
+# DYNAMIC ARRAY
+# *****************************************************************************
+###############################################################################
+
 class DynamicArray
   attr_reader :length
 
@@ -29,7 +35,7 @@ class DynamicArray
     val
   end
 
-  # O(1) ammortized; O(n) worst case. 
+  # O(1) ammortized; O(n) worst case.
   def push(val)
     resize! if length == capacity
 
