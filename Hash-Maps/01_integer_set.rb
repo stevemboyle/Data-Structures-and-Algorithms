@@ -71,9 +71,21 @@ class MaxIntSet
 end
 
 class IntSet
+
+  #############################################################################
+  # INITIALIZE
+  # We create a new Array with a specified number of buckets.
+  #############################################################################
+
   def initialize(num_buckets = 20)
     @store = Array.new(num_buckets) { Array.new }
   end
+
+  #############################################################################
+  # INSERT
+  # First, we check whether that number is already included in our Set.
+  # Then, we push the number into the bucket at its corresponding index.
+  #############################################################################
 
   def insert(num)
     return false if include?(num)
@@ -81,9 +93,20 @@ class IntSet
     num
   end
 
+  #############################################################################
+  # REMOVE
+  # We delete the number from the bucket at its corresponding index.
+  #############################################################################
+
   def remove(num)
     self[num].delete(num)
   end
+
+  #############################################################################
+  # REMOVE
+  # We check whether number's corresponding index's bucket includes the number.
+  #############################################################################
+
 
   def include?(num)
     self[num].include?(num)
@@ -91,9 +114,20 @@ class IntSet
 
   private
 
+  #############################################################################
+  # GETTER
+  # The index for a number is found by that number modulo the number of buckets.
+  # The number of buckets is, of course, a number that changes.
+  #############################################################################
+
   def [](num)
     @store[num % num_buckets]
   end
+
+  #############################################################################
+  # NUMBER OF BUCKETS
+  # The number of buckets is equal to the Set's length.
+  #############################################################################
 
   def num_buckets
     @store.length
