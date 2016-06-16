@@ -140,7 +140,6 @@ class RingBuffer
   # Check whether the index is out of bounds.
   # ***************************************************************************
 
-
   def check_index(index)
     unless (index >= 0) && (index < length)
       raise "index out of bounds"
@@ -153,6 +152,7 @@ class RingBuffer
   # Double our Capacity.
   # Create a new Static Array with our new Capacity.
   # Reassign the values in our old Array to our new Array.
+  # Remember, their indices will be based on (Start Index + Index) % Capacity
   # Set our Capacity to our new Capacity.
   # Set our Store to our new Store.
   # Set our Start Index back at 0.

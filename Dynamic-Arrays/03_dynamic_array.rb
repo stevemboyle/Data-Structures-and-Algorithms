@@ -9,23 +9,52 @@ require_relative "01_static_array"
 class DynamicArray
   attr_reader :length
 
+  # ***************************************************************************
+  # INITIALIZE
+  # ***************************************************************************
+  # Set our Store to a Static Array with 8 Buckets.
+  # Set our Capacity to 8.
+  # Set our initial Length to 0.
+  # ***************************************************************************
+
   def initialize
     self.store, self.capacity, self.length = StaticArray.new(8), 8, 0
   end
 
-  # O(1)
+  # ***************************************************************************
+  # GET
+  # O(1) Time Complexity
+  # ***************************************************************************
+  # First, check whether our requested Index is out of bounds.
+  # Fetch the value from the Store at that Index.
+  # ***************************************************************************
+
   def [](index)
     check_index(index)
     store[index]
   end
 
-  # O(1)
+  # ***************************************************************************
+  # SET
+  # O(1) Time Complexity
+  # ***************************************************************************
+  # First, check whether our requested Index is out of bounds.
+  # Set the value at that Index.
+  # ***************************************************************************
+
   def []=(index, value)
     check_index(index)
     store[index] = value
   end
 
-  # O(1)
+  # ***************************************************************************
+  # POP
+  # O(1) Time Complexity
+  # ***************************************************************************
+  # Raise an error if there are no values to pop.
+  # 
+  # ***************************************************************************
+
   def pop
     raise "index out of bounds" unless (length > 0)
 
