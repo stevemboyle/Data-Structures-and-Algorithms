@@ -47,7 +47,7 @@ class MaxIntSet
   end
 
   # ***************************************************************************
-  # REMOVE
+  # INCLUDE
   # ***************************************************************************
   # First, we check that the number is not larger than the size of the array.
   # Then, we check whether our set includes the number.
