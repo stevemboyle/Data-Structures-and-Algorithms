@@ -200,6 +200,7 @@ class ResizingIntSet
 
   # ***************************************************************************
   # REMOVE
+  # Find the appropriate Index and delete the Number.
   # ***************************************************************************
 
   def remove(num)
@@ -208,6 +209,7 @@ class ResizingIntSet
 
   # ***************************************************************************
   # INCLUDE
+  # Find the appropriate Index and check whether it includes the Number.
   # ***************************************************************************
 
   def include?(num)
@@ -218,6 +220,7 @@ class ResizingIntSet
 
   # ***************************************************************************
   # NUMBER OF BUCKETS
+  # The Number of Buckets is equal to the length of the store.
   # ***************************************************************************
 
   def num_buckets
@@ -226,6 +229,9 @@ class ResizingIntSet
 
   # ***************************************************************************
   # RESIZE
+  # Create a new Array with twice as many Buckets.
+  # Take the Numbers from the old Array and redistribute them.
+  # Their new redistribution is based on the new Number of Buckets.
   # ***************************************************************************
 
   def resize!

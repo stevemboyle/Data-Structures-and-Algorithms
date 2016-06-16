@@ -11,6 +11,8 @@ class HashSet
 
   # ***************************************************************************
   # INITIALIZE
+  # Create a new Array with 8 Buckets.
+  # Set the count to 0.
   # ***************************************************************************
 
   def initialize(num_buckets = 8)
