@@ -31,6 +31,13 @@ end
 # *****************************************************************************
 # LINKED LIST
 # *****************************************************************************
+# Notes My next goal was to build on the `Hash Set` by introducing key-value
+# pairs to make it a `Hash Map`. As an intermediary step (`04_linked_list.rb`),
+# I built a `Linked List` -- a data structure based on a series of links which
+# all hold a `value` and a pointer to the `next` link or to nil. In this
+# construction, so long as we have a pointer to the Head link, we can get to
+# any link by traversing the links in order. 
+# *****************************************************************************
 ###############################################################################
 
 class LinkedList

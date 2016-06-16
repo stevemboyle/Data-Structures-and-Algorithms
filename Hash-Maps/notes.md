@@ -16,3 +16,11 @@ Sets, of course, store unique items in no particular order. In my initial constr
 The next step (`01_integer_set.rb // IntSet`) was to contend with an unpredictable range of integers by creating a fixed length array and then sorting the integers into sub-arrays based on the `integer % array.length`. This creates predictable sorting and handles negative numbers.
 
 Next, I needed to ensure faster look-up times for arrays with large numbers of values. The solution here is to have arrays which can resize. In this implementation (`01_integer_set.rb / ResizingIntSet`), every time the number of integers in our set approaches to the number of buckets in our array, we double the size of our array.
+
+### Building a Hash Set
+
+The first step here (`03_hash_set.rb`) was to improve on `ResizingIntSet` by hashing every item before inserting it. Inserting it is still determined taking an integer (now the return value of the hashing) module the number of buckets. This now means that our new `HashSet`, based on `ResizingIntSet`, can handle any data type.
+
+### Building a Linked List
+
+My next goal was to build on the `Hash Set` by introducing key-value pairs to make it a `Hash Map`. As an intermediary step (`04_linked_list.rb`), I built a `Linked List` -- a data structure based on a series of links which all hold a `value` and a pointer to the `next` link or to nil. In this construction, so long as we have a pointer to the Head link, we can get to any link by traversing the links in order. 

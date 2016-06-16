@@ -4,6 +4,12 @@ require_relative 'p02_hashing'
 # *****************************************************************************
 # HASH SET
 # *****************************************************************************
+# Notes The first step here (`03_hash_set.rb`) was to improve on
+# `ResizingIntSet` by hashing every item before inserting it. Inserting it is
+# still determined taking an integer (now the return value of the hashing)
+# modulo the number of buckets. This now means that our new `HashSet`, based on
+# `ResizingIntSet`, can handle any data type.
+# *****************************************************************************
 ###############################################################################
 
 class HashSet
