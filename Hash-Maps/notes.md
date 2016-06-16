@@ -29,4 +29,10 @@ My next goal was to build on the `Hash Set` by introducing key-value pairs to ma
 
 In this section (`05_hash_map.rb`), I built on the existing `HashSet` by changing all of our buckets to `Linked Lists`, which start out empty and grow by adding links to their tails.
 
-By this point, I was able to build a functioning Hash Map which resizes dynamically. For each new value, we'd first (1) hash the key, (2) mod the hash of the key by the current number of buckets, (2) then add the key-value pair as a new link to the appropriate Linked List. 
+By this point, I was able to build a functioning Hash Map which resizes dynamically. For each new value, we'd first (1) hash the key, (2) mod the hash of the key by the current number of buckets, (2) then add the key-value pair as a new link to the appropriate Linked List.
+
+### Building an LRU CACHE
+
+As we know, an LRU Cache is a cache of recently-used items, with LRU standing for 'Least Recently Used'. In this implementation (`06_lru_cache.rb`), we hold `max` many items and keep track of our most-recently used items, such that when we run the risk of exceeding `max`, we delete our least recently used item.
+
+I built this by combining our Hash Map and our Linked List. 
