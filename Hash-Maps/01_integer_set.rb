@@ -8,6 +8,7 @@ class MaxIntSet
 
   # ***************************************************************************
   # INITIALIZE
+  # ***************************************************************************
   # Here, we create an Array with indices from 0 to the Maximum Value.
   # All values in the Array are initialized to False.
   # ***************************************************************************
@@ -18,6 +19,7 @@ class MaxIntSet
 
   # ***************************************************************************
   # INSERT
+  # ***************************************************************************
   # First, we check that the number is not larger than the size of the array.
   # Next, we check if the value at that index is already set to true.
   # Then, we set the value at that index to True.
@@ -31,6 +33,7 @@ class MaxIntSet
 
   # ***************************************************************************
   # REMOVE
+  # ***************************************************************************
   # First, we check that the number is not larger than the size of the array.
   # Next, we check if the value at that index is already False.
   # Then, we set the value of that index to False.
@@ -45,6 +48,7 @@ class MaxIntSet
 
   # ***************************************************************************
   # REMOVE
+  # ***************************************************************************
   # First, we check that the number is not larger than the size of the array.
   # Then, we check whether our set includes the number.
   # We do this by checking whether the value at that index is True or False.
@@ -59,6 +63,7 @@ class MaxIntSet
 
   # ***************************************************************************
   # IS VALID?
+  # ***************************************************************************
   # We check that our number is within the scope of the array.
   # ***************************************************************************
 
@@ -68,6 +73,7 @@ class MaxIntSet
 
   # ***************************************************************************
   # VALIDATE
+  # ***************************************************************************
   # We raise an error if our number is not within the scope of the array.
   # ***************************************************************************
 
@@ -86,6 +92,7 @@ class IntSet
 
   # ***************************************************************************
   # INITIALIZE
+  # ***************************************************************************
   # We create a new Array with a specified number of buckets.
   # ***************************************************************************
 
@@ -95,6 +102,7 @@ class IntSet
 
   # ***************************************************************************
   # INSERT
+  # ***************************************************************************
   # First, we check whether that number is already included in our Set.
   # Then, we push the number into the bucket at its corresponding index.
   # ***************************************************************************
@@ -107,6 +115,7 @@ class IntSet
 
   # ***************************************************************************
   # REMOVE
+  # ***************************************************************************
   # We delete the number from the bucket at its corresponding index.
   # ***************************************************************************
 
@@ -116,6 +125,7 @@ class IntSet
 
   # ***************************************************************************
   # INCLUDE
+  # ***************************************************************************
   # We check whether number's corresponding index's bucket includes the number.
   # ***************************************************************************
 
@@ -127,6 +137,7 @@ class IntSet
 
   # ***************************************************************************
   # GETTER
+  # ***************************************************************************
   # The index for a number is found by that number modulo the number of buckets.
   # The number of buckets is, of course, a number that changes.
   # ***************************************************************************
@@ -137,6 +148,7 @@ class IntSet
 
   # ***************************************************************************
   # NUMBER OF BUCKETS
+  # ***************************************************************************
   # The number of buckets is equal to the Set's length.
   # ***************************************************************************
 
@@ -157,6 +169,9 @@ class ResizingIntSet
   # ***************************************************************************
   # INITIALIZE
   # ***************************************************************************
+  # We create an Array where each of the buckets is an empty Array.
+  # Our count begins at zero.
+  # ***************************************************************************
 
   def initialize(num_buckets = 20)
     @store = Array.new(num_buckets) { Array.new }
@@ -165,6 +180,13 @@ class ResizingIntSet
 
   # ***************************************************************************
   # INSERT
+  # ***************************************************************************
+  # Return false if the Number is already in our Set.
+  # The Number's Index is the Number modulo the Number of Buckets.
+  # Insert the Number into the Array at its Index.
+  # Increment the Count by 1.
+  # If the Count exceeds the Number of Buckets, resize the Array.
+  # We resize the Array by doubling its Number of Buckets and resorting.
   # ***************************************************************************
 
   def insert(num)

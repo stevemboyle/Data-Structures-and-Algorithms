@@ -14,6 +14,8 @@ class HashMap
 
   # ***************************************************************************
   # INITIALIZE
+  # We create a new Array where each bucket is a Linked List.
+  # Our count begins at zero.
   # ***************************************************************************
 
   def initialize(num_buckets = 8)
@@ -88,6 +90,7 @@ class HashMap
 
   # ***************************************************************************
   # NUMBER OF BUCKETS
+  # The number of buckets is the length of the current Array.
   # ***************************************************************************
 
   def num_buckets
@@ -96,6 +99,9 @@ class HashMap
 
   # ***************************************************************************
   # RESIZE
+  # We double the size of our Array.
+  # Each bucket in the Array is a Linked List.
+  # We resort our existing items into our new Array.
   # ***************************************************************************
 
   def resize!
