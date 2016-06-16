@@ -2,6 +2,13 @@
 # *****************************************************************************
 # MAX INTEGER SET
 # *****************************************************************************
+# Notes: Sets, of course, store unique items in no particular order. In my
+# initial construction (`01_integer_set.rb // MaxIntSet`), I built a set for
+# only integers in a pre-existing, positive range. Using a `max` value, I built
+# an array of that length, with the indices from 0 to the index one less than
+# the length having values of either `true` or `false`, based on whether than
+# positive integer was contained in the set.
+# *****************************************************************************
 ###############################################################################
 
 class MaxIntSet
