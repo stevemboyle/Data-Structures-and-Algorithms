@@ -5,6 +5,14 @@ require_relative 'p04_linked_list'
 # *****************************************************************************
 # HASH MAP
 # *****************************************************************************
+# Notes: In this section (`05_hash_map.rb`), I built on the existing `HashSet`
+# by changing all of our buckets to `Linked Lists`, which start out empty and
+# grow by adding links to their tails. By this point, I was able to build a
+# functioning Hash Map which resizes dynamically. For each new value, we'd
+# first (1) hash the key, (2) mod the hash of the key by the current number of
+# buckets, (2) then add the key-value pair as a new link to the appropriate
+# Linked List.
+# *****************************************************************************
 ###############################################################################
 
 class HashMap

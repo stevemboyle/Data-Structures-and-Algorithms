@@ -23,4 +23,10 @@ The first step here (`03_hash_set.rb`) was to improve on `ResizingIntSet` by has
 
 ### Building a Linked List
 
-My next goal was to build on the `Hash Set` by introducing key-value pairs to make it a `Hash Map`. As an intermediary step (`04_linked_list.rb`), I built a `Linked List` -- a data structure based on a series of links which all hold a `value` and a pointer to the `next` link or to nil. In this construction, so long as we have a pointer to the Head link, we can get to any link by traversing the links in order. 
+My next goal was to build on the `Hash Set` by introducing key-value pairs to make it a `Hash Map`. As an intermediary step (`04_linked_list.rb`), I built a `Linked List` -- a data structure based on a series of links which all hold a `value` and a pointer to the `next` link or to nil. In this construction, so long as we have a pointer to the Head link, we can get to any link by traversing the links in order.
+
+### Building a Hash Map
+
+In this section (`05_hash_map.rb`), I built on the existing `HashSet` by changing all of our buckets to `Linked Lists`, which start out empty and grow by adding links to their tails.
+
+By this point, I was able to build a functioning Hash Map which resizes dynamically. For each new value, we'd first (1) hash the key, (2) mod the hash of the key by the current number of buckets, (2) then add the key-value pair as a new link to the appropriate Linked List. 
